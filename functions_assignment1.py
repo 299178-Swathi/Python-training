@@ -197,3 +197,50 @@ print(function_is_empty('string'))
 # Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode,
 # calculate_range, calculate_variance, calculate_std (standard deviation).
 
+# 2.12.3. Exercises ➞ Level 3
+# Write a function called is_prime, which checks if a number is prime.
+
+def is_prime(n):
+    if n<=1:
+        return False
+    for i in range(2,n):
+        if n%i == 0:
+            return False
+    else:
+        return True
+num=int(input('Enter the number: '))
+if is_prime(num):
+    print(f'{num} is a prime number.')
+else:
+    print(f'{num} is not a print.')
+
+
+# 2.Write a functions which checks if all items are unique in the list.
+
+def all_unique(items):
+    return len(items) == len(set(items))
+
+data=[1,2,3,4,5,5,6,4]
+if all_unique(data):
+    print('All the numbers are unique')
+else:
+    print('There are repeated numbers')
+
+# Write a function which checks if all the items of the list are of the same data type.
+
+def same_datatype(items):
+    if not items:
+        return True
+    first_type=type(items[0])
+    for item in items:
+        if type(item) != first_type:
+            return False
+    return True
+
+data=[1,2,3,4,5.7,'8']
+if same_datatype(data):
+    print('All items are of same datatype')
+else:
+    print('All items are not same datatypes')
+
+# Write a function which check if provided variable is a valid python variable
